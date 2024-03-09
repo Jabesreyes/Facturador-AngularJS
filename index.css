@@ -1,0 +1,31 @@
+/* PARAMETROS PAGINA ENTERA */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+/* imagen del login */
+.imgL{
+    width: 600px;
+    border-radius: 15px;
+}
+
+/* toda la columna del texto */
+.coltexts{
+    padding-top: 150px;
+}
+
+/* parametros para los form groups */
+.colorinputs{
+    background-color: #ececec;
+    width: 500px;
+    border-radius: 15px;
+    color: black;
+}
+
+/* color individual para boton login */
+.colorbtn{
+    color: white;
+    background-color: #3c3c3c;
+}
