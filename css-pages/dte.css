@@ -1,0 +1,53 @@
+/* PARAMETROS PAGINA ENTERA */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* CONTAINERS USER, CREAR DTE , HISTORIAL */
+.user{
+    background-color: #E3D0FF;
+    border-radius: 10px;
+    width: 150px;
+    margin-top: 50px;
+}
+
+.crear{
+    margin-top: 100px;
+    background-color: #E3D0FF;
+    border-radius: 10px;
+    padding: 2em;
+    height: 150px;
+    width: 250px;
+}
+
+.history{
+    padding: 2em;
+    background-color: #F3EBFF;
+    border-radius: 10px;
+    margin-top: 50px;
+    height: 150px;
+    width: 250px;
+}
+
+/* TAMAÑO DE ICONOS */
+.material-symbols-rounded{
+    font-size: 50px;
+}
+
+/* FORM  */
+
+.form{
+    height: 650px;
+    border-radius: 20px;
+    background-color: #F8F4F4;
+}
+
+
+
