@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myAppDte">
 
 <head>
     <meta charset="UTF-8">
@@ -13,14 +13,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
     <!-- GOOGLE FONTS ICONS -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <!-- SWEET ALERT JS -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <link rel="stylesheet" href="../css-pages/dte.css">
     <title>DTE</title>
 </head>
 
 <body>
 
-    <div class="container text-center">
+    <div class="container text-center" ng-controller="DteController">
         <div class="row mt-5">
             <div class="col-3">
                 <div class="container user">
@@ -36,12 +41,12 @@
                         </p>
                     </div>
                 </a>
-                
+
                 <a href="">
                     <div class="container history ">
                         <span class="material-symbols-rounded">
                             history
-                            </span>
+                        </span>
                         <p class="pt-1">
                             Historial
                         </p>
@@ -49,18 +54,240 @@
                 </a>
             </div>
             <div class="container form col-9">
-                <div class="alert alert-secondary" role="alert">
-                    "Debe llenar la información requerida para seguir avanzando"
+                <div class="bottons mt-5">
+                    <button class="btn btn-custom m-4" type="button" ng-click="showTipoDte()"
+                        ng-class="{ 'active-button': tipoDteVisibility }">Tipo DTE</button>
+                    <button class="btn btn-custom m-4" type="button" ng-click="showEmisor()"
+                        ng-class="{ 'active-button': emisorVisibility }">Emisor</button>
+                    <button class="btn btn-custom m-4" type="button" ng-click="showReceptor()"
+                        ng-class="{ 'active-button': receptorVisibility }">Receptor</button>
+                    <button class="btn btn-custom m-4" type="button" ng-click="showDetalles()" ng-class="{ 'active-button': detallesVisibility }">Detalles</button>
+
+
                 </div>
-                <form>
-                    <h5>Tipo de DTE</h5>
+                <form class="mt-4" ng-show="tipoDteVisibility">
+                    <h5 class="mb-4"><strong>Tipo de DTE</strong></h5>
                     <div class="mb-3">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="factura">
-                            <label class="form-check-label" for="factura">Factura</label>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input type="radio" class="btn-check" name="options-base" id="option1"
+                                        autocomplete="off" checked>
+                                    <label class="btn btn-options" for="option1">Factura</label><br>
+
+                                    <input type="radio" class="btn-check" name="options-base" id="option6"
+                                        autocomplete="off">
+                                    <label class="btn btn-options" for="option6">Factura de Exportación</label><br>
+
+                                    <input type="radio" class="btn-check" name="options-base" id="option7"
+                                        autocomplete="off">
+                                    <label class="btn btn-options" for="option7">Factura Sujeto Excluido</label><br>
+
+                                    <input type="radio" class="btn-check" name="options-base" id="option8"
+                                        autocomplete="off">
+                                    <label class="btn btn-options" for="option8">Comprobante de Liquidación</label><br>
+
+                                    <input type="radio" class="btn-check" name="options-base" id="option9"
+                                        autocomplete="off">
+                                    <label class="btn btn-options" for="option9">Comprobante de Retención</label><br>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input type="radio" class="btn-check" name="options-base" id="option10"
+                                        autocomplete="off">
+                                    <label class="btn btn-options" for="option10">Comprobante de Donación</label><br>
+
+                                    <input type="radio" class="btn-check" name="options-base" id="option11"
+                                        autocomplete="off">
+                                    <label class="btn btn-options" for="option11">Comprobante de Credito
+                                        Fiscal</label><br>
+
+                                    <input type="radio" class="btn-check" name="options-base" id="option12"
+                                        autocomplete="off">
+                                    <label class="btn btn-options" for="option12">Nota de Remisión</label><br>
+
+                                    <input type="radio" class="btn-check" name="options-base" id="option13"
+                                        autocomplete="off">
+                                    <label class="btn btn-options" for="option13">Nota de Debito</label><br>
+
+                                    <input type="radio" class="btn-check" name="options-base" id="option14"
+                                        autocomplete="off">
+                                    <label class="btn btn-options" for="option14">Nota de Credito</label><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center mt-2">
+                            <div class="col-auto">
+                                <div class="form-check">
+                                    <input type="radio" class="btn-check" name="options-base" id="option15"
+                                        autocomplete="off">
+                                    <label class="btn btn-options" for="option15">Documento Contable de
+                                        Liquidación</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-dark">Guardar y Continuar</button>
+                    <button type="submit" class="btn btn-dark" ng-click="saveTipoDte()">Guardar y Continuar</button>
+                </form>
+
+                <!-- FORM EMISOR -->
+                <form class="mt-4" ng-show="emisorVisibility">
+                    <h5 class="mb-4"><strong>Emisor</strong></h5>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon1">Nombre</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon1" ng-model="emisorData.nombre">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2">Actividad:</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon2" ng-model="emisorData.actividad">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon3">Departamento</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon3" ng-model="emisorData.departamento">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon4">Telefono</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon4" ng-model="emisorData.telefono">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon5">Complemento</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon1" ng-model="emisorData.complemento">
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon6">Nombre Comercial</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon6" ng-model="emisorData.nombreComercial">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon7">NRC</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon7" ng-model="emisorData.nrc">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon8">NIT</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon8" ng-model="emisorData.nit">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon9">Municipio</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon9" ng-model="emisorData.municipio">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon10">Correo</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon10" ng-model="emisorData.correo">
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn btn-dark" ng-click="saveEmisor()">Guardar y Continuar</button>
+                </form>
+
+
+                <!-- FORM RECEPTOR -->
+                <form class="mt-4" ng-show="receptorVisibility">
+                    <h5 class="mb-4"><strong>Receptor</strong></h5>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon1">Nombre</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon1" ng-model="receptorData.nombre">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2">N° de Documento:</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon2" ng-model="receptorData.nDocumento">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon3">Departamento</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon3" ng-model="receptorData.departamento">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon4">Telefono</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon4" ng-model="receptorData.telefono">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon5">Correo</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon1" ng-model="receptorData.correo">
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon6">Tipo de Documento</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon6" ng-model="receptorData.tipoDocumento">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon7">NRC</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon7" ng-model="receptorData.nrc">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon8">Municipio</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon8" ng-model="receptorData.municipio">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon9">Complemento</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon9" ng-model="receptorData.complemento">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon10">Actividad</span>
+                                        <input type="text" class="form-control" aria-label="Nombre"
+                                            aria-describedby="basic-addon10" ng-model="receptorData.actividad">
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn btn-dark" ng-click="saveReceptor()">Guardar y Continuar</button>
                 </form>
             </div>
 
@@ -77,7 +304,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 
     <!-- SCRIPT -->
-    <script src=""></script>
+    <script src="../js-pages/dte.js"></script>
 </body>
 
 </html>
