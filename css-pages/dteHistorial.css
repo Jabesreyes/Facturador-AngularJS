@@ -13,7 +13,7 @@ a {
 
 /* CONTAINERS USER, CREAR DTE , HISTORIAL */
 .user {
-    background-color: #BDFFD3;
+    background-color: #E3D0FF;
     border-radius: 10px;
     width: 150px;
     margin-top: 70px;
@@ -21,7 +21,7 @@ a {
 
 .crear {
     margin-top: 100px;
-    background-color: #BDFFD3;
+    background-color: #F3EBFF;
     border-radius: 10px;
     padding: 2em;
     height: 150px;
@@ -30,7 +30,7 @@ a {
 
 .history {
     padding: 2em;
-    background-color: #e0ffeb;
+    background-color: #E3D0FF;
 
     border-radius: 10px;
     margin-top: 50px;
@@ -51,28 +51,42 @@ a {
     background-color: #F8F4F4;
 }
 
-.nit{
-    margin-top: 200px;
+
+/* COLORES PARA BOTONES ACTIVOS Y INACTIVOS */
+.active-button {
+    background-color: #d7bdff !important;
 }
 
-.input-group{
-    margin-bottom: 15px;
+.btn-custom {
+    background-color: #F3EBFF;
+    margin-left: 50px;
+}
 
+
+.btn-custom:hover {
+    background-color: #eaddfe;
+}
+
+.btn-options {
+    border-color: #6684FF;
     width: 400px;
+    margin-bottom: 15px;
 }
-.input-group-text{
-    width: 120px;
-    background-color: #DCFCE7;
-}
-.input-group .form-control {
-    width: calc(100% - 150px); 
+
+/* COLORES PARA LAS TABLAS */
+
+table {
+    border: 2px solid #6684FF!important;
 }
 
 
 
 /* MEDIA QUERY LAPTOP 2 */
 @media (768px < width <=1024px) {
-   
+    .btn-options {
+        width: 300px;
+        margin-bottom: 15px;    
+    }
 
     /* CONTAINERS USER, CREAR DTE , HISTORIAL */
     .user {
@@ -110,7 +124,15 @@ a {
 /* MEDIA QUERY TABLET */
 
 @media (425px < width <=769px) {
-    
+    .btn-custom {
+        margin-left: 25px;
+    }
+
+    .btn-options {
+        width: 200px;
+        height: 60px;
+        margin-bottom: 15px;    
+    }
 
     /* CONTAINERS USER, CREAR DTE , HISTORIAL */
     .user {
@@ -151,7 +173,17 @@ a {
     *{
         font-size: 12px;
     }
-    
+    .btn-custom {
+        margin-left: 5px;
+        margin-top: 10px;
+        }
+
+    .btn-options {
+        font-size: 12px;
+        width: 105px;
+        height: 50px;
+        margin-bottom: 15px;
+    }
 
     /* CONTAINERS USER, CREAR DTE , HISTORIAL */
     .user {
@@ -192,7 +224,17 @@ a {
     *{
         font-size: 12px;
     }
-    
+    .btn-custom {
+        margin-left: 5px;
+        margin-top: 10px;
+        }
+
+    .btn-options {
+        font-size: 12px;
+        width: 90px;
+        height: 63px;
+        margin-bottom: 15px;
+    }
 
     /* CONTAINERS USER, CREAR DTE , HISTORIAL */
     .user {
@@ -233,7 +275,16 @@ a {
     *{
         font-size: 10px;
     }
-    
+    .btn-custom {
+        margin-left: 5px;
+        margin-top: 10px;
+        }
+
+    .btn-options {
+        width: 80px;
+        height: 50px;
+        margin-bottom: 15px;
+    }
 
     /* CONTAINERS USER, CREAR DTE , HISTORIAL */
     .user {

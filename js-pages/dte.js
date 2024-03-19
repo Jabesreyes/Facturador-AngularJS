@@ -7,24 +7,35 @@ angular.module('myAppDte', [])
         $scope.tipoDteVisibility = true; // Mostrar formulario Tipo DTE por defecto
         $scope.emisorVisibility = false; // Ocultar formulario Emisor por defecto
         $scope.receptorVisibility = false; // Ocultar formulario Receptor por defecto
+        $scope.detallesVisibility = false; // Ocultar formulario Detalles por defecto
 
         $scope.showTipoDte = function () {
             $scope.tipoDteVisibility = true;
             $scope.emisorVisibility = false;
             $scope.receptorVisibility = false;
+            $scope.detallesVisibility = false;
 
         };
 
         $scope.showEmisor = function () {
             $scope.tipoDteVisibility = false;
             $scope.emisorVisibility = true;
-            $scope.receptorVisibility = false;  
+            $scope.receptorVisibility = false; 
+            $scope.detallesVisibility = false; 
         };
 
         $scope.showReceptor = function () {
             $scope.tipoDteVisibility = false;
             $scope.emisorVisibility = false;
             $scope.receptorVisibility = true;
+            $scope.detallesVisibility = false;
+        }
+
+        $scope.showDetalles = function () {
+            $scope.tipoDteVisibility = false;
+            $scope.emisorVisibility = false;
+            $scope.receptorVisibility = false;
+            $scope.detallesVisibility = true;
         }
 
         // Funcion para guardar el formulario Tipo DTE
@@ -50,7 +61,11 @@ angular.module('myAppDte', [])
                 swal("Error", "Todos los campos son requeridos", "error");
 
              }else{
-                swal("Guardado", "Datos guardados correctamente", "success");
+                $scope.showDetalles(); // Muestra el formulario Detalles
              }
+        };
+
+        $scope.saveDetalles = function () {
+            swal("Guardado", "Datos guardados correctamente", "success");
         };
     }]);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myAppToken">
+<html lang="en" ng-app="myAppTokenHistorial">
 
 <head>
     <meta charset="UTF-8">
@@ -19,13 +19,13 @@
     <!-- SWEET ALERT JS -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <link rel="stylesheet" href="../css-pages/tokens.css">
-    <title>Tokens</title>
+    <link rel="stylesheet" href="../css-pages/tokensHistorial.css">
+    <title>Historial de Tokens</title>
 </head>
 
 <body>
 
-    <div class="container text-center" ng-controller="TokenController">
+    <div class="container text-center" ng-controller="TokensHistorialController">
         <div class="row mt-5">
             <div class="col-3">
                 <div class="container user">
@@ -54,29 +54,27 @@
                 </a>
             </div>
             <div class="container form col-9">
-                <div class="d-flex justify-content-center">
-                    <div class="input-group nit">
-                        <span class="input-group-text">NIT:</span>
-                        <input type="text" class="form-control" aria-label="NIT">
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <div class="input-group">
-                        <span class="input-group-text">Contraseña:</span>
-                        <input type="password" class="form-control" aria-label="NIT">
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <div class="input-group">
-                        <span class="input-group-text">API Key:</span>
-                        <input type="text" class="form-control" aria-label="API">
-                    </div>
-                </div>
-                
-                
-                
-
-                <button type="submit" class="btn btn-dark" ng-click="saveToken()">Guardar</button>
+                    <!-- TABLA TOKENS -->
+                    <div class="container mt-5">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">NIT</th>
+                                    <th scope="col">Contraseña</th>
+                                    <th scope="col">API Key</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="token in tokens">
+                                    <td>{{token.fecha}}</td>
+                                    <td>{{token.nit}}</td>
+                                    <td>{{token.password}}</td>
+                                    <td>{{token.api}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>      
                         
             </div>
         </div>
@@ -92,7 +90,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 
     <!-- SCRIPT -->
-    <script src="../js-pages/tokens.js"></script>
+    <script src="../js-pages/tokensHistorial.js"></script>
 </body>
 
 </html>

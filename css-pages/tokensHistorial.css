@@ -21,7 +21,7 @@ a {
 
 .crear {
     margin-top: 100px;
-    background-color: #BDFFD3;
+    background-color: #e0ffeb;
     border-radius: 10px;
     padding: 2em;
     height: 150px;
@@ -30,8 +30,7 @@ a {
 
 .history {
     padding: 2em;
-    background-color: #e0ffeb;
-
+    background-color: #BDFFD3;
     border-radius: 10px;
     margin-top: 50px;
     height: 150px;
@@ -51,24 +50,10 @@ a {
     background-color: #F8F4F4;
 }
 
-.nit{
-    margin-top: 200px;
-}
 
-.input-group{
-    margin-bottom: 15px;
-
-    width: 400px;
+table{
+    border: 2px solid #BDFFD3!important;
 }
-.input-group-text{
-    width: 120px;
-    background-color: #DCFCE7;
-}
-.input-group .form-control {
-    width: calc(100% - 150px); 
-}
-
-
 
 /* MEDIA QUERY LAPTOP 2 */
 @media (768px < width <=1024px) {
