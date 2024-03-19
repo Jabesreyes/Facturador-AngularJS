@@ -6,7 +6,12 @@
 }
 
 /* imagen del login */
+.login{
+    margin-top: 200px;
+}
+
 .imgL{
+    margin-top: 10px;
     width: 600px;
     border-radius: 15px;
 }
@@ -28,4 +33,131 @@
 .colorbtn{
     color: white;
     background-color: #3c3c3c;
+}
+
+/* MEDIA QUERY LAPTOP 2 */
+@media (768px < width <= 1024px){
+    .login{
+        margin-top: 50px;
+    }
+    .imgL{
+        margin-top: 125px;
+        margin-left: 20px;
+        width: 400px;
+    }
+
+    p{
+        text-align: center;
+    }
+}
+
+/* MEDIA QUERY TABLET */
+
+@media (425px < width <= 769px){
+    .coltexts{
+        padding-top: 100px;
+    }
+
+    .login{
+        margin-top: 0;
+    }
+    
+    .imgL{
+        margin-top: 100px;
+        margin-left: 10px;
+        width: 400px;
+    }
+
+    .colorinputs{
+        background-color: #ececec;
+        width: 325px;
+        border-radius: 15px;
+        color: black;
+    }
+
+    p{
+        text-align: center;
+    }
+}
+
+/* MEDIA QUERY MOBILE L */
+@media (375px < width <= 425px){
+    .login{
+        margin-top: 0;
+        margin-left: 10px;
+    }
+
+    .coltexts{
+        padding-top: 100px;
+    }
+
+    .imgL{
+        display: none;
+    }
+
+    .colorinputs{
+        background-color: #ececec;
+        width: 375px;
+        border-radius: 15px;
+        color: black;
+    }
+
+    p{
+        text-align: center;
+    }
+}
+
+/* MEDIA QUERY MOBILE M */
+
+@media (320px < width <= 376px){
+    .coltexts{
+        padding-top: 100px;
+    }
+    .login{
+        margin-top: 0;
+        margin-left: 20px;
+    }
+    .imgL{
+        display: none;
+    }
+
+    .colorinputs{
+        background-color: #ececec;
+        width: 300px;
+        border-radius: 15px;
+        color: black;
+    }
+
+    p{
+        text-align: center;
+    }
+}
+
+/* MEDIA QUERY MOBILE S */
+
+@media (width <= 320px){
+    .coltexts{
+        padding-top: 150px;
+    }
+    p{
+        display: none;
+    }
+    .login{
+        margin-top: 0;
+        margin-left: 45px;
+    }
+    .imgL{
+        display: none;
+    }
+
+    .colorinputs{
+        background-color: #ececec;
+        width: 200px;
+        border-radius: 15px;
+        color: black;
+    }
+
+    p{
+        text-align: center;
+    }
 }

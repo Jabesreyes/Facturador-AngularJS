@@ -1,25 +1,25 @@
 /* PARAMETROS PAGINA ENTERA */
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: "Open Sans", sans-serif;
 }
 
 /* BOTONES CREAR DTE Y HISTORIAL */
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
 
 /* CONTAINERS USER, CREAR DTE , HISTORIAL */
-.user{
+.user {
     background-color: #E3D0FF;
     border-radius: 10px;
     width: 150px;
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
-.crear{
+.crear {
     margin-top: 100px;
     background-color: #E3D0FF;
     border-radius: 10px;
@@ -28,7 +28,7 @@ a{
     width: 250px;
 }
 
-.history{
+.history {
     padding: 2em;
     background-color: #F3EBFF;
     border-radius: 10px;
@@ -38,13 +38,13 @@ a{
 }
 
 /* TAMAÑO DE ICONOS */
-.material-symbols-rounded{
+.material-symbols-rounded {
     font-size: 50px;
 }
 
 /* FORM  */
 
-.form{
+.form {
     height: 650px;
     border-radius: 20px;
     background-color: #F8F4F4;
@@ -57,52 +57,288 @@ a{
 }
 
 .btn-custom {
-    background-color: #F3EBFF; 
+    background-color: #F3EBFF;
+    margin-left: 50px;
 }
 
 
-.btn-custom:hover{
+.btn-custom:hover {
     background-color: #eaddfe;
 }
 
 
 
 
-.btn-options{
+.btn-options {
     border-color: #6684FF;
     width: 400px;
     margin-bottom: 15px;
 }
 
-.btn-check:checked + .btn-options {
+.btn-check:checked+.btn-options {
     background-color: #6684FF;
 }
 
 .btn-options:hover {
-    border-color: #6684FF !important; 
+    border-color: #6684FF !important;
 }
 
 
-.btn-check:checked + .btn-options {
-    background-color: #6684FF; 
-    color: #fff; 
+.btn-check:checked+.btn-options {
+    background-color: #6684FF;
+    color: #fff;
 }
 
 
-.btn-check:checked + .btn-options:hover {
+.btn-check:checked+.btn-options:hover {
     background-color: #6684FF;
 }
 
 /* COLORES FORM EMISOR */
 .input-group-text {
-    background-color: #F3EBFF; 
+    background-color: #F3EBFF;
 }
 
 .input-group-text,
 .form-control {
-    border-color: #6684FF; 
+    border-color: #6684FF;
 }
 
 
+/* MEDIA QUERY LAPTOP 2 */
+@media (768px < width <=1024px) {
+    .btn-options {
+        width: 300px;
+        margin-bottom: 15px;    
+    }
 
+    /* CONTAINERS USER, CREAR DTE , HISTORIAL */
+    .user {
+        width: 150px;
+        margin-top: 70px;
+    }
 
+    .crear {
+        margin-top: 100px;
+        padding: 2em;
+        height: 150px;
+        width: 200px;
+    }
+
+    .history {
+        padding: 2em;
+        margin-top: 50px;
+        height: 150px;
+        width: 200px;
+    }
+
+    /* TAMAÑO DE ICONOS */
+    .material-symbols-rounded {
+        font-size: 50px;
+    }
+
+    /* FORM  */
+    .form {
+        height: 650px;
+        border-radius: 20px;
+    }
+
+}
+
+/* MEDIA QUERY TABLET */
+
+@media (425px < width <=769px) {
+    .btn-custom {
+        margin-left: 25px;
+    }
+
+    .btn-options {
+        width: 200px;
+        height: 60px;
+        margin-bottom: 15px;    
+    }
+
+    /* CONTAINERS USER, CREAR DTE , HISTORIAL */
+    .user {
+        width: 150px;
+        margin-top: 70px;
+    }
+
+    .crear {
+        margin-top: 100px;
+        height: 100px;
+        width: 150px;
+        padding: 20px;
+    }
+
+    .history {
+        margin-top: 50px;
+        height: 100px;
+        width: 150px;
+        padding: 20px;
+
+    }
+
+    /* TAMAÑO DE ICONOS */
+    .material-symbols-rounded {
+        font-size: 30px;
+    }
+
+    /* FORM  */
+    .form {
+        height: 700px;
+        border-radius: 20px;
+        margin-bottom: 50px;
+    }
+}
+
+/* MEDIA QUERY MOBILE L */
+@media (375px < width <=425px) {
+    *{
+        font-size: 12px;
+    }
+    .btn-custom {
+        margin-left: 5px;
+        margin-top: 10px;
+        }
+
+    .btn-options {
+        font-size: 12px;
+        width: 105px;
+        height: 50px;
+        margin-bottom: 15px;
+    }
+
+    /* CONTAINERS USER, CREAR DTE , HISTORIAL */
+    .user {
+        width: 70px;
+        margin-top: 60px;
+        padding: 2px;
+    }
+
+    .crear {
+        margin-top: 100px;
+        height: 80px;
+        width: 70px;
+        padding: 10px;
+    }
+
+    .history {
+        margin-top: 50px;
+        height: 80px;
+        width: 70px;
+        padding: 10px;
+    }
+
+    /* TAMAÑO DE ICONOS */
+    .material-symbols-rounded {
+        font-size: 20px;
+    }
+
+    /* FORM  */
+    .form {
+        height: 700px;
+        margin-bottom: 50px;
+    }
+}
+
+/* MEDIA QUERY MOBILE M */
+
+@media (320px < width <=376px) {
+    *{
+        font-size: 12px;
+    }
+    .btn-custom {
+        margin-left: 5px;
+        margin-top: 10px;
+        }
+
+    .btn-options {
+        font-size: 12px;
+        width: 90px;
+        height: 63px;
+        margin-bottom: 15px;
+    }
+
+    /* CONTAINERS USER, CREAR DTE , HISTORIAL */
+    .user {
+        width: 70px;
+        margin-top: 60px;
+        padding: 2px;
+    }
+
+    .crear {
+        margin-top: 100px;
+        height: 80px;
+        width: 70px;
+        padding: 10px;
+    }
+
+    .history {
+        margin-top: 50px;
+        height: 80px;
+        width: 70px;
+        padding: 10px;
+    }
+
+    /* TAMAÑO DE ICONOS */
+    .material-symbols-rounded {
+        font-size: 20px;
+    }
+
+    /* FORM  */
+    .form {
+        height: 700px;
+        margin-bottom: 50px;
+    }
+}
+
+/* MEDIA QUERY MOBILE S */
+
+@media (width <=320px) {
+    *{
+        font-size: 10px;
+    }
+    .btn-custom {
+        margin-left: 5px;
+        margin-top: 10px;
+        }
+
+    .btn-options {
+        width: 80px;
+        height: 50px;
+        margin-bottom: 15px;
+    }
+
+    /* CONTAINERS USER, CREAR DTE , HISTORIAL */
+    .user {
+        width: 60px;
+        margin-top: 60px;
+        padding: 2px;
+    }
+
+    .crear {
+        margin-top: 100px;
+        height: 70px;
+        width: 60px;
+        padding: 10px;
+    }
+
+    .history {
+        margin-top: 50px;
+        height: 70px;
+        width: 60px;
+        padding: 10px;
+    }
+
+    /* TAMAÑO DE ICONOS */
+    .material-symbols-rounded {
+        font-size: 20px;
+    }
+
+    /* FORM  */
+    .form {
+        height: 700px;
+        margin-bottom: 50px;
+    }
+}

@@ -29,7 +29,7 @@
         <div class="row mt-5">
             <div class="col-3">
                 <div class="container user">
-                    <p class="username  p-2">@username</p>
+                    <p class="username">@username</p>
                 </div>
                 <a href="../pages/dte.html">
                     <div class="container crear">
@@ -55,13 +55,14 @@
             </div>
             <div class="container form col-9">
                 <div class="bottons mt-5">
-                    <button class="btn btn-custom m-4" type="button" ng-click="showTipoDte()"
+                    <button class="btn btn-custom " type="button" ng-click="showTipoDte()"
                         ng-class="{ 'active-button': tipoDteVisibility }">Tipo DTE</button>
-                    <button class="btn btn-custom m-4" type="button" ng-click="showEmisor()"
+                    <button class="btn btn-custom " type="button" ng-click="showEmisor()"
                         ng-class="{ 'active-button': emisorVisibility }">Emisor</button>
-                    <button class="btn btn-custom m-4" type="button" ng-click="showReceptor()"
+                    <button class="btn btn-custom " type="button" ng-click="showReceptor()"
                         ng-class="{ 'active-button': receptorVisibility }">Receptor</button>
-                    <button class="btn btn-custom m-4" type="button" ng-click="showDetalles()" ng-class="{ 'active-button': detallesVisibility }">Detalles</button>
+                    <button class="btn btn-custom " type="button" ng-click="showDetalles()"
+                        ng-class="{ 'active-button': detallesVisibility }">Detalles</button>
 
 
                 </div>
@@ -100,7 +101,7 @@
 
                                     <input type="radio" class="btn-check" name="options-base" id="option11"
                                         autocomplete="off">
-                                    <label class="btn btn-options" for="option11">Comprobante de Credito
+                                    <label class="btn btn-options" for="option11">Credito
                                         Fiscal</label><br>
 
                                     <input type="radio" class="btn-check" name="options-base" id="option12"
@@ -122,7 +123,7 @@
                                 <div class="form-check">
                                     <input type="radio" class="btn-check" name="options-base" id="option15"
                                         autocomplete="off">
-                                    <label class="btn btn-options" for="option15">Documento Contable de
+                                    <label class="btn btn-options" for="option15">Documento de
                                         Liquidación</label>
                                 </div>
                             </div>
@@ -132,83 +133,94 @@
                 </form>
 
                 <!-- FORM EMISOR -->
+                <!-- FORM EMISOR -->
                 <form class="mt-4" ng-show="emisorVisibility">
                     <h5 class="mb-4"><strong>Emisor</strong></h5>
                     <div class="mb-3">
                         <div class="row">
-                            <div class="col">
-                                <div class="form-check">
-                                    <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon1">Nombre</span>
-                                        <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon1" ng-model="emisorData.nombre">
-                                    </div>
-                                    <br>
-                                    <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon2">Actividad:</span>
-                                        <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon2" ng-model="emisorData.actividad">
-                                    </div>
-                                    <br>
-                                    <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon3">Departamento</span>
-                                        <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon3" ng-model="emisorData.departamento">
-                                    </div>
-                                    <br>
-                                    <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon4">Telefono</span>
-                                        <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon4" ng-model="emisorData.telefono">
-                                    </div>
-                                    <br>
-                                    <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon5">Complemento</span>
-                                        <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon1" ng-model="emisorData.complemento">
-                                    </div>
-                                    <br>
+                            <div class="col-sm">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">Nombre</span>
+                                    <input type="text" class="form-control" aria-label="Nombre"
+                                        aria-describedby="basic-addon1" ng-model="emisorData.nombre">
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="form-check">
-                                    <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon6">Nombre Comercial</span>
-                                        <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon6" ng-model="emisorData.nombreComercial">
-                                    </div>
-                                    <br>
-                                    <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon7">NRC</span>
-                                        <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon7" ng-model="emisorData.nrc">
-                                    </div>
-                                    <br>
-                                    <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon8">NIT</span>
-                                        <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon8" ng-model="emisorData.nit">
-                                    </div>
-                                    <br>
-                                    <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon9">Municipio</span>
-                                        <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon9" ng-model="emisorData.municipio">
-                                    </div>
-                                    <br>
-                                    <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon10">Correo</span>
-                                        <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon10" ng-model="emisorData.correo">
-                                    </div>
-                                    <br>
+                            <div class="col-sm">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon2">Actividad:</span>
+                                    <input type="text" class="form-control" aria-label="Actividad"
+                                        aria-describedby="basic-addon2" ng-model="emisorData.actividad">
                                 </div>
                             </div>
                         </div>
-
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon3">Departamento</span>
+                                    <input type="text" class="form-control" aria-label="Departamento"
+                                        aria-describedby="basic-addon3" ng-model="emisorData.departamento">
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon4">Teléfono</span>
+                                    <input type="text" class="form-control" aria-label="Teléfono"
+                                        aria-describedby="basic-addon4" ng-model="emisorData.telefono">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon5">Complemento</span>
+                                    <input type="text" class="form-control" aria-label="Complemento"
+                                        aria-describedby="basic-addon5" ng-model="emisorData.complemento">
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon6">Nombre Comercial</span>
+                                    <input type="text" class="form-control" aria-label="Nombre Comercial"
+                                        aria-describedby="basic-addon6" ng-model="emisorData.nombreComercial">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon7">NRC</span>
+                                    <input type="text" class="form-control" aria-label="NRC"
+                                        aria-describedby="basic-addon7" ng-model="emisorData.nrc">
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon8">NIT</span>
+                                    <input type="text" class="form-control" aria-label="NIT"
+                                        aria-describedby="basic-addon8" ng-model="emisorData.nit">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon9">Municipio</span>
+                                    <input type="text" class="form-control" aria-label="Municipio"
+                                        aria-describedby="basic-addon9" ng-model="emisorData.municipio">
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon10">Correo</span>
+                                    <input type="text" class="form-control" aria-label="Correo"
+                                        aria-describedby="basic-addon10" ng-model="emisorData.correo">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-dark" ng-click="saveEmisor()">Guardar y Continuar</button>
                 </form>
+
 
 
                 <!-- FORM RECEPTOR -->
@@ -219,33 +231,33 @@
                             <div class="col">
                                 <div class="form-check">
                                     <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon1">Nombre</span>
+                                        <span class="input-group-text" id="basic-addon11">Nombre</span>
                                         <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon1" ng-model="receptorData.nombre">
+                                            aria-describedby="basic-addon11" ng-model="receptorData.nombre">
                                     </div>
                                     <br>
                                     <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon2">N° de Documento:</span>
+                                        <span class="input-group-text" id="basic-addon12">N° de Documento:</span>
                                         <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon2" ng-model="receptorData.nDocumento">
+                                            aria-describedby="basic-addon12" ng-model="receptorData.nDocumento">
                                     </div>
                                     <br>
                                     <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon3">Departamento</span>
+                                        <span class="input-group-text" id="basic-addon13">Departamento</span>
                                         <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon3" ng-model="receptorData.departamento">
+                                            aria-describedby="basic-addon13" ng-model="receptorData.departamento">
                                     </div>
                                     <br>
                                     <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon4">Telefono</span>
+                                        <span class="input-group-text" id="basic-addon14">Telefono</span>
                                         <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon4" ng-model="receptorData.telefono">
+                                            aria-describedby="basic-addon14" ng-model="receptorData.telefono">
                                     </div>
                                     <br>
                                     <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon5">Correo</span>
+                                        <span class="input-group-text" id="basic-addon15">Correo</span>
                                         <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon1" ng-model="receptorData.correo">
+                                            aria-describedby="basic-addon16" ng-model="receptorData.correo">
                                     </div>
                                     <br>
                                 </div>
@@ -253,33 +265,33 @@
                             <div class="col">
                                 <div class="form-check">
                                     <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon6">Tipo de Documento</span>
+                                        <span class="input-group-text" id="basic-addon17">Tipo de Documento</span>
                                         <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon6" ng-model="receptorData.tipoDocumento">
+                                            aria-describedby="basic-addon17" ng-model="receptorData.tipoDocumento">
                                     </div>
                                     <br>
                                     <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon7">NRC</span>
+                                        <span class="input-group-text" id="basic-addon18">NRC</span>
                                         <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon7" ng-model="receptorData.nrc">
+                                            aria-describedby="basic-addon18" ng-model="receptorData.nrc">
                                     </div>
                                     <br>
                                     <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon8">Municipio</span>
+                                        <span class="input-group-text" id="basic-addon19">Municipio</span>
                                         <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon8" ng-model="receptorData.municipio">
+                                            aria-describedby="basic-addon19" ng-model="receptorData.municipio">
                                     </div>
                                     <br>
                                     <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon9">Complemento</span>
+                                        <span class="input-group-text" id="basic-addon20">Complemento</span>
                                         <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon9" ng-model="receptorData.complemento">
+                                            aria-describedby="basic-addon20" ng-model="receptorData.complemento">
                                     </div>
                                     <br>
                                     <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon10">Actividad</span>
+                                        <span class="input-group-text" id="basic-addon21">Actividad</span>
                                         <input type="text" class="form-control" aria-label="Nombre"
-                                            aria-describedby="basic-addon10" ng-model="receptorData.actividad">
+                                            aria-describedby="basic-addon21" ng-model="receptorData.actividad">
                                     </div>
                                     <br>
                                 </div>
@@ -290,7 +302,6 @@
                     <button type="submit" class="btn btn-dark" ng-click="saveReceptor()">Guardar y Continuar</button>
                 </form>
             </div>
-
         </div>
     </div>
 

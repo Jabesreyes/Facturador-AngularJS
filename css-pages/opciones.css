@@ -64,3 +64,144 @@ a{
     background-color: #ffafa1;
     margin-left: 70px;
 }
+
+/* MEDIA QUERY LAPTOP 2 */
+@media (768px < width <= 1024px){
+    .card-wide{
+        width: 450px;
+        height: 302px;
+    }
+    
+    .card-small{
+        
+        width: 350px;
+        height: 302px;
+    }
+
+    .container{
+        margin-left: 75px;
+    }
+}
+
+/* MEDIA QUERY TABLET */
+
+@media (425px < width <= 769px){
+    .card-wide{
+        padding-top: 25px;
+        width: 350px;
+        height: 250px;
+    }
+    
+    .card-small{
+        padding-top: 25px;
+        width: 250px;
+        height: 250px;
+    }
+    .custom-invalidacion{
+        margin-left: 20px;
+    }
+
+    .container{
+        margin-left: 60px;
+    }
+
+    p{
+        display: none;
+    }
+}
+
+/* MEDIA QUERY MOBILE L */
+@media (375px < width <= 425px){
+    .card-wide{
+        width: 175px;
+        height: 200px;
+    }
+    
+    .card-small{
+        width: 150px;
+        height: 200px;
+    }
+    .custom-invalidacion{
+        margin-left: 40px;
+    }
+
+    .container{
+        margin-left: 30px;
+    }
+
+    p{
+        display: none;
+    }
+    *{
+        font-size: 17px;
+    }
+    .material-symbols-rounded {
+        font-size: 55px;
+        padding-top: 10px;
+    }
+      
+}
+
+/* MEDIA QUERY MOBILE M */
+
+@media (320px < width <= 376px){
+    .card-wide{
+        width: 160px;
+        height: 170px;
+    }
+    
+    .card-small{
+        width: 145px;
+        height: 170px;
+    }
+    .custom-invalidacion{
+        margin-left: 40px;
+    }
+
+    .container{
+        margin-left: 15px;
+    }
+
+    p{
+        display: none;
+    }
+    *{
+        font-size: 15px;
+    }
+    .material-symbols-rounded {
+        font-size: 50px;
+        padding-top: 10px;
+      }
+}
+
+/* MEDIA QUERY MOBILE S */
+
+@media (width <= 320px){
+    .card-wide{
+        width: 140px;
+        height: 150px;
+    }
+    
+    .card-small{
+        width: 120px;
+        height: 150px;
+    }
+    .custom-invalidacion{
+        margin-left: 40px;
+    }
+
+    .container{
+        margin-left: 15px;
+    }
+
+    p{
+        display: none;
+    }
+    *{
+        font-size: 14px;
+    }
+    .material-symbols-rounded {
+        font-size: 40px;
+        padding-top: 10px;
+      }
+}
