@@ -65,17 +65,42 @@ a{
     margin-left: 70px;
 }
 
+/* MEDIA QUERY LAPTOP 3 */
+@media (1440px < width){
+    .custom-dte, .custom-token{
+        margin-top: 80px;
+        margin-left: 200px;
+    }
+    .custom-contingencia{
+        margin-left: 200px;
+    }
+    .custom-invalidacion{
+        margin-left: 270px;
+    }
+}
 /* MEDIA QUERY LAPTOP 2 */
+@media (1047px < width <= 1280px){
+    .custom-dte, .custom-token{
+        margin-top: 80px;
+        margin-left: 20px;
+    }
+    .custom-contingencia{
+        margin-left: 20px;
+    }
+    .custom-invalidacion{
+        margin-left: 90px;
+    }
+}
+
 @media (768px < width <= 1024px){
     .card-wide{
         width: 450px;
-        height: 302px;
+        height: 310px;
     }
     
     .card-small{
-        
         width: 350px;
-        height: 302px;
+        height: 310px;
     }
 
     .container{
